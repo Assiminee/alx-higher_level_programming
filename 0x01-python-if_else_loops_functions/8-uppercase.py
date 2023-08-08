@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def uppercase(str):
     sep = ""
+    if len(str) == 0:
+        exit(1)
     for i in range(len(str)):
         if i == len(str) - 1:
             sep = "\n"
