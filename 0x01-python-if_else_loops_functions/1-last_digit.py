@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-
 sign = 1
 
 if number < 0:
     sign = -1
 
 last_dig = (number * sign) % 10
+if number < 0:
+    last_dig *= sign
 
 if last_dig == 0:
     comp = "and is 0"
