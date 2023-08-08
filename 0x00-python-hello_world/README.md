@@ -167,10 +167,14 @@ Write a function in C that checks if a singly linked list has a cycle in it.
 Requirements:
 
 + Only these functions are allowed: write, printf, putchar, puts, malloc, free
-[lists.h](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/lists.h)
-[10-linked_lists.c](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/10-linked_lists.c)
-[10-main.c](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/10-main.c)
-
++ Other files necessary to run this program:
+	+ [lists.h](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/lists.h)
+	+ [10-linked_lists.c](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/10-linked_lists.c)
+	+ [10-main.c](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/10-main.c)
++ Compile using:
+```
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 10-main.c 10-check_cycle.c 10-linked_lists.c -o cycle
+```
 ## [100-write.py](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x00-python-hello_world/100-write.py)
 
 Write a Python script that prints exactly and that piece of art is useful - Dora Korpar, 2015-10-19, followed by a new line.
