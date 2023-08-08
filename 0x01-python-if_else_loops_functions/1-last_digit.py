@@ -16,5 +16,4 @@ else:
         comp = "and is greater than 5"
     elif last_dig < 6:
         comp = "and is less than 6 and not 0"
-
-print("Last digit of {:d} is {:d} {:s}".format(number, last_dig, comp)) 
+print("Last digit of {:d} is {:d} {:s}".format(number, last_dig, comp))
