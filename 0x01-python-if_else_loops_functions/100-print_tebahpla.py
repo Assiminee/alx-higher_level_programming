@@ -6,4 +6,3 @@ while (i >= 97):
         step = 0
     print("{:s}".format(chr(i - step)), end="")
     i -= 1
-
