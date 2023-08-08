@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for i in range(100):
-    sep = ""
+    sep = ", "
 
     prefix = ""
 
@@ -9,8 +9,5 @@ for i in range(100):
 
     if i == 99:
         sep = "\n"
-
-    if i != 0:
-        print(",", end=" ")
 
     print("{:s}{:d}".format(prefix, i), end=sep)
