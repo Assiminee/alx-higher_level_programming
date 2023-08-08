@@ -200,7 +200,9 @@ Write a function in C that inserts a number into a sorted singly linked list.
 
 + Prototype: listint_t *insert_node(listint_t **head, int number);
 + Return: the address of the new node, or NULL if it failed
-```[lists.h](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/lists.h)```
+```
+[lists.h](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/lists.h)
+```
 
 
 
