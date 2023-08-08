@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
-    sep = ""
-    if len(str) == 0:
-        exit(1)
     for i in range(len(str)):
-        if i == len(str) - 1:
-            sep = "\n"
+        step = 32
+
         if not 97 <= ord(str[i]) <= 122:
-            print("{:s}".format(str[i]), end=sep)
-        else:
-            print("{:s}".format(chr(ord(str[i]) - 32)), end=sep)
+            step = 0
+
+        print("{:s}".format(chr(ord(str[i]) - step)), end="")
+    print()
