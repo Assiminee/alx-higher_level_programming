@@ -209,4 +209,46 @@ Write a function in C that inserts a number into a sorted singly linked list.
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 13-main.c linked_lists.c 13-insert_number.c -o insert
 ```
 
+## [100-print_tebahpla.py](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/100-print_tebahpla.py)
+Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
 
++ You can only use one print function with string format
++ You can only use one loop in your code
++ You are not allowed to store characters in a variable
++ You are not allowed to import any module
+
+## [101-remove_char_at.py](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/101-remove_char_at.py)
+Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
+
++ Prototype: def remove_char_at(str, n):
++ You are not allowed to import any module
+You don’t need to understand __import__
+
+## [102-magic_calculation.py](https://github.com/Assiminee/alx-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/102-magic_calculation.py)
+Write the Python function def magic_calculation(a, b, c): that does exactly the same as the following Python bytecode:
+```
+  3           0 LOAD_FAST                0 (a)
+              3 LOAD_FAST                1 (b)
+              6 COMPARE_OP               0 (<)
+              9 POP_JUMP_IF_FALSE       16
+
+  4          12 LOAD_FAST                2 (c)
+             15 RETURN_VALUE
+
+  5     >>   16 LOAD_FAST                2 (c)
+             19 LOAD_FAST                1 (b)
+             22 COMPARE_OP               4 (>)
+             25 POP_JUMP_IF_FALSE       36
+
+  6          28 LOAD_FAST                0 (a)
+             31 LOAD_FAST                1 (b)
+             34 BINARY_ADD
+             35 RETURN_VALUE
+
+  7     >>   36 LOAD_FAST                0 (a)
+             39 LOAD_FAST                1 (b)
+             42 BINARY_MULTIPLY
+             43 LOAD_FAST                2 (c)
+             46 BINARY_SUBTRACT
+             47 RETURN_VALUE
+```
