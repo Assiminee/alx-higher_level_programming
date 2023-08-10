@@ -19,4 +19,5 @@ if __name__ == "__main__":
     function_list = [add, sub, mul, div]
     for i in range(len(ops)):
         if op == ops[i]:
-            print("{:d} {:s} {:d} = {:d}".format(a, op, b, function_list[i](a, b)))
+            res = function_list[i](a, b)
+            print("{:d} {:s} {:d} = {:d}".format(a, op, b, res))
