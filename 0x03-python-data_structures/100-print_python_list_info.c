@@ -18,5 +18,5 @@ void print_python_list_info(PyObject *p)
 		printf("Element %ld: %s\n", i, types[i]);
 	for (i = 0; i < obj_size; i++)
 		free(types[i]);
-	free(types)
+	free(types);
 }
