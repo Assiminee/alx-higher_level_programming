@@ -13,7 +13,7 @@ void print_python_list_info(PyObject *p)
 		types[i] = malloc(strlen(Py_TYPE(PyList_GetItem(p, i)) -> tp_name) + 1);
 		strcpy(types[i], Py_TYPE(PyList_GetItem(p, i)) -> tp_name);
 	}	
-	printf("[*] Allocated = %ld\n", PyList_ClearFreeList());
+	printf("[*] Allocated = %d\n", PyList_ClearFreeList());
 	for (i = 0; i < obj_size; i++)
 		printf("Element %ld: %s\n", i, types[i]);
 	for (i = 0; i < obj_size; i++)
