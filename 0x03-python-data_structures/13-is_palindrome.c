@@ -5,12 +5,10 @@ int is_palindrome(listint_t **head)
 	listint_t *top, *bot;
 	int count, i;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL || *head == NULL || (*head) -> next == NULL)
 		return (1);
 	top = *head;
 	count = num_ele(head);
-	if (count == 0 || count == 1)
-		return (1);
 	while (count - 1 > 0)
 	{
 		bot = *head;

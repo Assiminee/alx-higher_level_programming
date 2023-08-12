@@ -2,43 +2,26 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *top, *bot, *mid;
-	int count, half, cycle, i;
-	bool pal = false;
+	listint_t *top, *bot;
+	int count, i;
 
 	if (head == NULL || *head == NULL)
 		return (1);
 	top = *head;
-	mid = *head;
 	count = num_ele(head);
 	if (count == 0 || count == 1)
 		return (1);
-	half = count/2;
-	cycle = half;
-	pal = false;
-
-	if (count % 2 == 0)
-		half--;
-	for (i = 0; i < half; i++)
-	       mid = mid -> next;
-	while (cycle > 0)
+	while (count - 1 > 0)
 	{
-		bot = mid;
-		for (i = 0; i < cycle; i++)
+		bot = *head;
+		for (i = 0; i < count - 1; i++)
 			bot = bot -> next;
-		if (bot -> n == top -> n)
-			pal = true;
-		else
-		{
-			pal = false;
-			break;
-		}
+		if (bot -> n != top -> n)
+			return (0);
 		top = top -> next;
-		cycle--;
+		count--;
 	}
-	if (pal)
-		return (1);
-	return (0);
+	return (1);
 }
 
 int num_ele(listint_t **head)
