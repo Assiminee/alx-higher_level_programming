@@ -4,7 +4,6 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *top, *bot;
 	int count, i;
-	bool pal = false;
 
 	if (head == NULL || *head == NULL)
 		return (1);
@@ -12,26 +11,17 @@ int is_palindrome(listint_t **head)
 	count = num_ele(head);
 	if (count == 0 || count == 1)
 		return (1);
-	pal = false;
-
 	while (count - 1 > 0)
 	{
 		bot = *head;
 		for (i = 0; i < count - 1; i++)
 			bot = bot -> next;
-		if (bot -> n == top -> n)
-			pal = true;
-		else
-		{
-			pal = false;
-			break;
-		}
+		if (bot -> n != top -> n)
+			return (0);
 		top = top -> next;
 		count--;
 	}
-	if (pal)
-		return (1);
-	return (0);
+	return (1);
 }
 
 int num_ele(listint_t **head)
