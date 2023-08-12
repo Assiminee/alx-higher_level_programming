@@ -7,7 +7,7 @@ int is_palindrome(listint_t **head)
 	bool pal = false;
 
 	if (head == NULL || *head == NULL)
-		return (0);
+		return (1);
 	top = *head;
 	mid = *head;
 	count = num_ele(head);
