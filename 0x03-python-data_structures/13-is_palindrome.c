@@ -2,13 +2,18 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *top = *head;
-	listint_t *bot;
-	listint_t *mid = *head;
-	int count = num_ele(head);
-	int half = count/2, cycle = count/2;
-	int i;
+	listint_t *top, *bot, *mid;
+	int count, half, cycle, i;
 	bool pal = false;
+
+	if (head == NULL || *head == NULL)
+		return (0);
+	top = *head;
+	mid = *head;
+	count = num_ele(head);
+	half = count/2;
+	cycle = half;
+	pal = false;
 
 	if (count % 2 == 0)
 		half--;
