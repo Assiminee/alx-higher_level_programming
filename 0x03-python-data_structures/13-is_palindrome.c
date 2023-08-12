@@ -11,6 +11,8 @@ int is_palindrome(listint_t **head)
 	top = *head;
 	mid = *head;
 	count = num_ele(head);
+	if (count == 0)
+		return (1);
 	half = count/2;
 	cycle = half;
 	pal = false;
