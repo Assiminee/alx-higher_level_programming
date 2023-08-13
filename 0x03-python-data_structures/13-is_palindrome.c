@@ -3,9 +3,8 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *slow, *fast;
-	int i;
 
-	if (head == NULL || *head == NULL || *head -> next == NULL)
+	if (head == NULL || *head == NULL || (*head) -> next == NULL)
 		return (1);
 	fast = *head;
 	slow = *head;
@@ -28,7 +27,7 @@ int is_palindrome(listint_t **head)
 	return (1);
 }
 
-listint_t rev_list(listint_t **mid)
+listint_t *rev_list(listint_t **mid)
 {
 	listint_t *prev = NULL, *cur = *mid, *next;
 
