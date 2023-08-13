@@ -19,6 +19,7 @@ int is_palindrome(listint_t **head)
 	fast = *head;
 	while (slow -> next != NULL)
 	{
+		printf("fast -> n = %d || slow -> n = %d\n", fast -> n, slow -> n);
 		if (slow -> n != fast -> n)
 			return (0);
 		slow = slow -> next;
