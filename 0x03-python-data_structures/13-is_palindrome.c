@@ -2,42 +2,41 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow, *fast;
+	listint_t *top, *bot;
+	int count, i;
 
-	if (head == NULL || *head == NULL || (*head) -> next == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
-	fast = *head;
-	slow = *head;
-	while (fast != NULL && fast -> next != NULL)
+	top = *head;
+	count = num_ele(head);
+	if (count == 0 || count == 1)
+		return (1);
+	while (count - 1 > 0)
 	{
-		fast = fast -> next -> next;
-		slow = slow -> next;
-	}
-	if (fast != NULL && fast -> next == NULL)
-		slow = slow -> next;
-	slow = rev_list(&slow);
-	fast = *head;
-	while (slow -> next != NULL)
-	{
-		printf("fast -> n = %d || slow -> n = %d\n", fast -> n, slow -> n);
-		if (slow -> n != fast -> n)
+		bot = *head;
+		for (i = 0; i < count - 1; i++)
+			bot = bot -> next;
+		if (bot -> n != top -> n)
 			return (0);
-		slow = slow -> next;
-		fast = fast -> next;
+		top = top -> next;
+		count--;
 	}
 	return (1);
 }
 
-listint_t *rev_list(listint_t **mid)
+int num_ele(listint_t **head)
 {
-	listint_t *prev = NULL, *cur = *mid, *next;
+	listint_t *ptr;
+	int count = 0;
 
-	while (cur != NULL)
+	if (*head == NULL || head == NULL)
+		return (0);
+	ptr = *head;
+
+	while (ptr != NULL)
 	{
-		next = cur -> next;
-		cur -> next = prev;
-		prev = cur;
-		cur = next;
+		count++;
+		ptr = ptr -> next;
 	}
-	return (prev);
+	return (count);
 }
