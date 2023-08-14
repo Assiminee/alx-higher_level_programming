@@ -2,26 +2,25 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *top, *bot;
-	int count, i;
+	listint_t *slow, *fast, *prev = NULL, *next;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL || *head == NULL || (*head) -> next == NULL)
 		return (1);
-	top = *head;
-	count = num_ele(head);
-	if (count == 0 || count == 1)
-		return (1);
-	while (count - 1 > 0)
+	slow = *head;
+	fast = *head;
+	while (fast != NULL || fast -> next != NULL)
 	{
-		bot = *head;
-		for (i = 0; i < count - 1; i++)
-			bot = bot -> next;
-		if (bot -> n != top -> n)
-			return (0);
-		top = top -> next;
-		count--;
+		next = slow;
+		slow -> next = prev;
+		prev = slow -> next;
+		slow = prev;
+		fast = fast -> next -> next;
 	}
-	return (1);
+	fast = *head;
+	printf("\n\nslow:\n");
+	print_listint(prev);
+	printf("\n\nfast:\n");
+	print_listint(fast);
 }
 
 int num_ele(listint_t **head)
