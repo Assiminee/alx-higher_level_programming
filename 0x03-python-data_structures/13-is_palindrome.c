@@ -2,40 +2,44 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow, *fast, *prev = NULL, *next;
+	listint_t *slow, *fast, *rev_list;
 
 	if (head == NULL || *head == NULL || (*head) -> next == NULL)
 		return (1);
 	slow = *head;
 	fast = *head;
-	while (fast != NULL || fast -> next != NULL)
+	while (fast != NULL && fast -> next != NULL)
 	{
-		next = slow;
-		slow -> next = prev;
-		prev = slow -> next;
-		slow = prev;
+		slow = slow -> next;
 		fast = fast -> next -> next;
 	}
 	fast = *head;
-	printf("\n\nslow:\n");
-	print_listint(prev);
-	printf("\n\nfast:\n");
-	print_listint(fast);
+	slow = reverse_list(slow);
+	rev_list = slow;
+	while (rev_list != NULL)
+	{
+		if (rev_list -> n != fast -> n)
+		{
+			slow = reverse_list(slow);
+			return (0);
+		}
+		fast = fast -> next;
+		rev_list = rev_list -> next;
+	}
+	slow = reverse_list(slow);
+	return (1);
 }
 
-int num_ele(listint_t **head)
+listint_t *reverse_list(listint_t *mid)
 {
-	listint_t *ptr;
-	int count = 0;
+	listint_t *prev = NULL, *next;
 
-	if (*head == NULL || head == NULL)
-		return (0);
-	ptr = *head;
-
-	while (ptr != NULL)
+	while (mid != NULL)
 	{
-		count++;
-		ptr = ptr -> next;
+		next = mid -> next;
+		mid -> next = prev;
+		prev = mid;
+		mid = next;
 	}
-	return (count);
+	return (prev);
 }
