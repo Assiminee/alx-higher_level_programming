@@ -17,7 +17,6 @@ def roman_to_int(roman_string):
             if prev > numerals[rev[i]]:
                 num -= numerals[rev[i]]
             else:
-                num += numerals[rev[i]]
-            
+                num += numerals[rev[i]] 
         return num
     return 0
