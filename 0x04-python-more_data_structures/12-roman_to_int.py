@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if isinstance(roman_string, str) and roman_string != None:
+    if isinstance(roman_string, str):
         numerals = {
                 'I': 1,
                 'V': 5,
@@ -10,15 +10,14 @@ def roman_to_int(roman_string):
                 'D': 500,
                 'M': 1000
                     }
-        num = 0
-        i = 0
-        if roman_string[i] == 'I' and len(roman_string) > 1:
-            while roman_string[i] == 'I':
-                num += numerals['I']
-                i += 1
-            if roman_string[i] != 'I' and roman_string[i]:
-                num *= -1
-        for it in range(i, len(roman_string)):
-            num += numerals[roman_string[it]]
+        rev = roman_string[::-1]
+        num = numerals[rev[0]]
+        for i in range(1, len(rev)):
+            prev = numerals[rev[i - 1]]
+            if prev > numerals[rev[i]]:
+                num -= numerals[rev[i]]
+            else:
+                num += numerals[rev[i]]
+            
         return num
     return 0
