@@ -23,5 +23,5 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	printf("  size: %ld\n", PyBytes_Size(p));
 	printf("  trying string: %s\n", PyBytes_AsString(p));
-	printf("%s\n", BytesObj->ob_shash);
+	printf("%b\n", p[0]);
 }
