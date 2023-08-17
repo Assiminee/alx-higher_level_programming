@@ -16,3 +16,9 @@ void print_python_list(PyObject *p)
 		i++;
 	}
 }
+
+void print_python_bytes(PyObject *p)
+{
+	printf("[.] bytes object info\n");
+	printf("  size: %ld\n", PyBytes_Size(p));
+}
