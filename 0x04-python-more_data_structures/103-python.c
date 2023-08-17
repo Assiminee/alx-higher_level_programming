@@ -4,7 +4,7 @@
 
 void print_python_list(PyObject *p)
 {
-	PyListObject *iter = (PyListObject *)p -> ob_item;
+	PyObject **iter = ((PyListObject *)p) -> ob_item;
 	int i = 0;
 
 	printf("[*] Python list info\n");
