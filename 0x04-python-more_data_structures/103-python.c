@@ -34,7 +34,7 @@ void print_python_bytes(PyObject *p)
 	if (!PyBytes_CheckExact(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
-		exit(EXIT_FAILURE);
+		return;
 	}
 	BytesObj = (PyBytesObject *)p;
 	ObjSize = PyBytes_Size(p);
