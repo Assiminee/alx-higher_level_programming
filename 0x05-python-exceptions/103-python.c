@@ -100,6 +100,6 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	printf("  value: %.15g\n", ((PyFloatObject *)p)->ob_fval);
+	printf("  value: %.16g\n", ((PyFloatObject *)p)->ob_fval);
 }
 
