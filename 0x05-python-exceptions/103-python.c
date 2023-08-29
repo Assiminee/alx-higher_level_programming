@@ -92,6 +92,9 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
+	double val = ((PyFloatObject *)p)->ob_fval;
+	char *str_rep;
+
 	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
 	if (!PyFloat_CheckExact(p))
@@ -100,6 +103,7 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	printf("  value: %.16g\n", ((PyFloatObject *)p)->ob_fval);
+	str_rep = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+	printf("  value: %s\n", str_rep);
 }
 
