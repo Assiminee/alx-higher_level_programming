@@ -35,7 +35,7 @@ void print_python_list(PyObject *p)
 	for (i = 0; i < num_ele; i++)
 	{
 		type = list_obj->ob_item[i]->ob_type->tp_name;
-		printf("  Element %ld: %s\n", i, type);
+		printf("Element %ld: %s\n", i, type);
 		if (strcmp(type, "bytes") == 0)
 			print_python_bytes(list_obj->ob_item[i]);
 		else if (strcmp(type, "float") == 0)
@@ -66,7 +66,7 @@ void print_python_bytes(PyObject *p)
 	bytes_obj = (PyBytesObject *)p;
 	obj_size = ((PyVarObject *)p)->ob_size;
 
-	printf("  size: %ld\n", obj_size);
+	printf("  size: %lu\n", obj_size);
 	printf("  trying string: %s\n", bytes_obj->ob_sval);
 
 	if (obj_size >= 10)
