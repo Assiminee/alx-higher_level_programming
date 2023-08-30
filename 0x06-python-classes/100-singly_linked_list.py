@@ -47,7 +47,8 @@ class SinglyLinkedList:
         self.__head = None
 
     def __str__(self):
-        """ returns the string representation of the linked list  """
+        """ returns the string representation of the linked list
+        sorted in ascending order """
         nodes = []
         while self.__head:
             nodes.append(self.__head.data)
@@ -55,7 +56,7 @@ class SinglyLinkedList:
         return "\n".join(str(val) for val in sorted(nodes))
 
     def sorted_insert(self, value):
-        """ inserts a new Node into the correct sorted position
-        in the list (increasing order) """
+        """ inserts a new Node at the beginning of the
+        singly linked list """
         new_node = Node(value, self.__head)
         self.__head = new_node
