@@ -5,7 +5,7 @@ import math
 
 class MagicClass:
     """ body of MagicClass """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ initializes an instance of MagicClass class """
         self.__radius = 0
         if type(radius) is str and radius.isdigit():
