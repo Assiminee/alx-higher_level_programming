@@ -5,9 +5,11 @@ import math
 
 class MagicClass:
     """ body of MagicClass """
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """ initializes an instance of MagicClass class """
         self.__radius = 0
+        if type(radius) is str and radius.isdigit():
+            radius = int(radius)
         if type(radius) is not int and type(radius) is not float:
             TypeError('radius must be a number')
         self.__radius = radius
