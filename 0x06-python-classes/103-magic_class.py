@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ defines MagicClass """
 import  math
-
+from dis import dis
 
 class MagicClass:
     """ body of MagicClass """
@@ -11,7 +11,7 @@ class MagicClass:
             TypeError('radius must be a number')
             self.__radius = None
         else:
-            self.__radius = 0
+            self.__radius = radius
 
     def area(self):
         """ return area of instance """
@@ -20,3 +20,4 @@ class MagicClass:
     def circumference(self):
         """ returns circumference of instance """
         return 2 * math.pi * self.__radius
+dis(MagicClass)
