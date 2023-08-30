@@ -44,14 +44,11 @@ class Square:
 
     def __str__(self):
         """ returns the string representation of the square """
-        if self.__size != 0:
-            mod = ""
-            rep = "\n" * self.__position[1] + (" " * self.__position[0] + "#" * self.__size + "\n") * self.__size
-            for i in range(len(rep) - 1):
-                mod += rep[i]
-            return mod
-        else:
-            return "\n"
+        mod = ""
+        rep = "\n" * self.__position[1] + (" " * self.__position[0] + "#" * self.__size + "\n") * self.__size
+        for i in range(len(rep) - 1):
+            mod += rep[i]
+        return mod
 
     def area(self):
         """ computes and returns area of a square """
