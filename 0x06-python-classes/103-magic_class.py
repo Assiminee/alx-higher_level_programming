@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ defines MagicClass """
 import  math
-from dis import dis
 
 class MagicClass:
     """ body of MagicClass """
@@ -20,4 +19,3 @@ class MagicClass:
     def circumference(self):
         """ returns circumference of instance """
         return 2 * math.pi * self.__radius
-dis(MagicClass)
