@@ -10,7 +10,7 @@ class MagicClass:
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             if type(radius) is str and radius.isdigit():
-                self.__radius = int(radius)
+                radius = float(radius)
             else:
                 TypeError('radius must be a number')
         self.__radius = radius
