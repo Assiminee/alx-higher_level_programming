@@ -44,10 +44,9 @@ class Square:
 
     def __str__(self):
         """ returns the string representation of the square """
-        sqr_size = self.__size
-        if sqr_size != 0:
-            mod = "\n" * self.__position[1]
-            rep = (" " * self.__position[0] + "#" * sqr_size + "\n") * sqr_size
+        if self.__size != 0:
+            mod = ""
+            rep = "\n" * self.__position[1] + (" " * self.__position[0] + "#" * self.__size + "\n") * self.__size
             for i in range(len(rep) - 1):
                 mod += rep[i]
             return mod
