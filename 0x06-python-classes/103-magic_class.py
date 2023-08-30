@@ -7,14 +7,17 @@ class MagicClass:
     """ body of MagicClass """
     def __init__(self, radius=0):
         """ initializes an instance of MagicClass class """
-        self._MagicClass__radius = 0
+        self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            TypeError('radius must be a number')
-        self._MagicClass__radius = float(radius)
+            if type(radius) is str and radius.isdigit():
+                self.__radius = int(radius)
+            else:
+                TypeError('radius must be a number')
+        self.__radius = radius
 
     def area(self):
         """ return area of instance """
-        return (self._MagicClass__radius ** 2) * math.pi
+        return (self.__radius ** 2) * math.pi
 
     def circumference(self):
         """ returns circumference of instance """
