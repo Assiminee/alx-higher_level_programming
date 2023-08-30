@@ -6,6 +6,7 @@ import math
 class MagicClass:
     """ body of MagicClass """
     def __init__(self, radius=0):
+        """ initializes an instance of MagicClass class """
         if type(radius) is not int or type(radius) is not float:
             TypeError('radius must be a number')
             self.__radius = None
