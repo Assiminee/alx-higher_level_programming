@@ -1,0 +1,72 @@
+#0-add_integer.txt
+
+===========================
+How to use 0-add_integer.py
+===========================
+
+This module contains only one function called "add_integer()".
+
+Numbers
+=======
+
+"add_integer()" returns an integer that is the result of the
+addition of two operands "a" and "b".
+
+::
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> add_integer(10, 3)
+	13
+
+if either of the operands is a floating-point number, it will be casted
+to an integer before the addition is performed.
+
+::
+
+	>>> add_integer(-13.76, 7.9)
+	-6
+
+"b" can be omitted since it has a default value of 98. "a" on the other hand
+is required. If it isn't specified, a TypeError will be raised.
+
+::
+
+	>>> add_integer(0)
+	98
+
+	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+In case either "a" or "b" is too large, an OverflowError will be raised.
+
+::
+
+	>>> add_integer(1e3000, 1)
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Non-numbers
+===========
+
+"add_integer()" does not handle cases where "a" or "b" aren't ints or floats.
+If their types are different than int or float, a TypeError will be raised.
+
+::
+
+	>>> add_integer("Hello", 1)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(154.34, [4, 5])
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
