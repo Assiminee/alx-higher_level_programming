@@ -1,0 +1,49 @@
+#5-text_indentation.txt
+
+================================
+How to use 5-text_indentation.py
+================================
+
+This module contains a single function called "text_indentation()"
+
+The function takes a single parameter "text" which is printed
+with 2 new lines after each of these characters: '.' '?' and ':'
+
+"text" must be a string
+
+::
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("My name is Yasmine. I am a software engineering student.")
+	My name is Yasmine.
+	<BLANKLINE>
+	I am a software engineering student.
+	<BLANKLINE>
+
+	>>> text_indentation("My. Name: is? Yasmine.")
+	My.
+	<BLANKLINE>
+	Name:
+	<BLANKLINE>
+	is?
+	<BLANKLINE>
+	Yasmine.
+	<BLANKLINE>
+
+	>>> text_indentation("This is a looong sentence")
+	This is a looong sentence
+
+A TypeError is raised if "text" isn't a string or if text
+isn't specified
+
+::
+
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+		...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
