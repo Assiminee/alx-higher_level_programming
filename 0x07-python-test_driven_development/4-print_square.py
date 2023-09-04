@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-4-print_square module
+print_square module
 """
 
 

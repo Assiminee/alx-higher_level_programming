@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-adds two integers a and b
+"""Module to add two integers
 """
 
 
