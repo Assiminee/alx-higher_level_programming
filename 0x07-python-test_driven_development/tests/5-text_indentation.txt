@@ -33,6 +33,15 @@ with 2 new lines after each of these characters: '.' '?' and ':'
 	>>> text_indentation("This is a looong sentence")
 	This is a looong sentence
 
+	>>> text_indentation("Holberton. School? How are you: John") #doctest: +REPORT_NDIFF
+	Holberton.
+	<BLANKLINE>
+	School?
+	<BLANKLINE>
+	How are you:
+	<BLANKLINE>
+	John
+
 A TypeError is raised if "text" isn't a string or if text
 isn't specified
 
