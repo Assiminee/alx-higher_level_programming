@@ -61,6 +61,8 @@ class TestMaxInteger(unittest.TestCase):
                -0.01, -5.8, -3.51, -3.43, -5.85]
         self.assertEqual(max_integer(lst), -0.01)
 
+        self.assertEqual(max_integer([9, 5, 0]), 9)
+
     def test_strings(self):
         """tests max_integer against strings
         Expected behaviour: returns the char
