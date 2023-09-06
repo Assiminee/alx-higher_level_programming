@@ -13,4 +13,5 @@ class LockedClass:
         if name == "first_name":
             self.__dict__[name] = val
         else:
-            raise AttributeError(f"'LockedClass' object has no attribute '{name}'")
+            err_msg = f"'LockedClass' object has no attribute '{name}'"
+            raise AttributeError(err_msg)
