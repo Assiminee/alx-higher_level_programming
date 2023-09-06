@@ -10,9 +10,9 @@ def matrix_divided(matrix, div):
     the elements of "matrix" divided by "div"
     """
     if not isinstance(matrix, list) or not len(matrix) or\
-    not all(isinstance(row, list) for row in matrix) or\
-    not all(len(row) != 0 for row in matrix) or\
-    not all(isinstance(ele, (int, float)) for row in matrix for ele in row):
+       not all(isinstance(row, list) for row in matrix) or\
+       not all(len(row) != 0 for row in matrix) or\
+       not all(isinstance(ele, (int, float)) for row in matrix for ele in row):
         raise TypeError("matrix must be a matrix "
                         "(list of lists) of integers/floats")
 

@@ -1,0 +1,151 @@
+#100-matrix_mul.txt
+
+============================
+How to use 100-matrix_mul.py
+============================
+
+This module contains only one function called "matrix_mul()"
+It takes two parameters:
+
+m_a : a matrix (list of lists) of floats/ints
+m_b : a matrix (list of lists) of floats/ints
+
+"matrix_mul()" miltiplies two matrices of floats/ints
+
+::
+
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[7, 10], [15, 22]]
+
+	>>> mat1 = [
+	...	[14, 3.14, 9],
+	...	[0.123, 11, 778.98],
+	...	[14, 12.34, 90],
+	...	[43, 234.11, 1.9]]
+
+	>>> mat2 = [
+	...	[1.5, 132.55],
+	...	[10.98, 1.01],
+	...	[3.09, 1.556]]
+
+	>>> print(matrix_mul(mat1, mat2)) # doctest: +NORMALIZE_WHITESPACE
+	[[83.2872, 1872.8754000000001],
+	[2528.0126999999998, 1239.50653],
+	[434.59319999999997, 2008.2034000000003],
+	[2640.8988000000004, 5939.057500000001]]
+
+	>>> mat3 = [
+	...	[-0.5, 12.4, 11, -8.002],
+	...	[3, -1.2, -43, 0]]
+
+	>>> print(matrix_mul(mat2, mat3)) # doctest: +NORMALIZE_WHITESPACE
+	[[396.90000000000003, -140.46, -5683.150000000001, -12.003],
+	[-2.46, 134.94000000000003, 77.35, -87.86196000000001],
+	[3.123, 36.448800000000006, -32.918000000000006, -24.72618]]
+
+The original matrices remain unchanged
+
+::
+
+	>>> mat1 # doctest: +NORMALIZE_WHITESPACE
+	[[14, 3.14, 9],
+	[0.123, 11, 778.98],
+	[14, 12.34, 90],
+	[43, 234.11, 1.9]]
+
+	>>> mat2 # doctest: +NORMALIZE_WHITESPACE
+	[[1.5, 132.55],
+	[10.98, 1.01],
+	[3.09, 1.556]]
+	
+	>>> mat3 # doctest: +NORMALIZE_WHITESPACE
+	[[-0.5, 12.4, 11, -8.002],
+	[3, -1.2, -43, 0]]
+
+"m_a" and "m_b" must be matrices of ints/floats. Otherwise,
+a TypeError is raised
+
+::
+
+	>>> print(matrix_mul("characters", 11))
+	Traceback (most recent call last):
+		...
+	TypeError: m_a must be a list
+
+	>>> print(matrix_mul([[1, 2, 3], [3, 4, 5]], "characters"))
+	Traceback (most recent call last):
+		...
+	TypeError: m_b must be a list
+
+
+"m_a" and "m_b" can't be empty. If they are, a ValueError
+is raised
+
+::
+
+	>>> print(matrix_mul([], [[1, 2, 3], [3, 4, 5]]))
+	Traceback (most recent call last):
+		...
+	ValueError: m_a can't be empty
+
+	>>> print(matrix_mul([[1, 2, 3], [3, 4, 5]], []))
+	Traceback (most recent call last):
+		...
+	ValueError: m_b can't be empty
+
+"m_a" and "m_b" can only contain integers and/or floats.
+Otherwise, a TypeError is raised
+
+::
+
+	>>> print(matrix_mul([["str1", "str2", "str3"]], [[1, 2, 3], [3, 4, 5]]))
+	Traceback (most recent call last):
+		...
+	TypeError: m_a should contain only integers or floats
+
+	>>> print(matrix_mul([[1, 2, 3], [3, 4, 5]], [["a", "b", "c", "d"]]))
+	Traceback (most recent call last):
+		...	
+	TypeError: m_b should contain only integers or floats
+
+The rows of "m_a" must of of the same size. The same applies
+to "m_b". If that's not the case, a TypeError will be raised
+
+::
+
+	>>> print(matrix_mul([[1, 2], [3, 4, 5], [6]], [[1, 2, 3], [3, 4, 5]]))
+	Traceback (most recent call last):
+		...
+	TypeError: each row of m_a must be of the same size
+
+	>>> print(matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4, 5], [6]]))
+	Traceback (most recent call last):
+		...
+	TypeError: each row of m_b must be of the same size
+
+Both "m_a" and "m_b" are required parameters. If either of them
+isn't specified, a TypeError is raised
+
+::
+
+	>>> print(matrix_mul([[1,2,3], [3, 4, 5]]))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+	>>> print(matrix_mul())
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+"m_a" and "m_b" must be able to be multiplied. Meaning that
+the number of columns of "m_a" must be equal to the number 
+of lines of "m_b" (i.e. len(m_a[0]) == len(m_b))
+
+::
+
+	>>> print(matrix_mul([[1, 2, 3]], [[3, 4, 5], [5, 6, 7]]))
+	Traceback (most recent call last):
+		...
+	ValueError: m_a and m_b can't be multiplied

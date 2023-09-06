@@ -22,6 +22,7 @@ The elements of matrix can be ints, floats, or a mixture of both.
 ::
 
 	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+	>>> import math
 	>>> mat1 = [
 	...	[11, 12, 13],
 	...	[7.0, 7.5, 8.0],
@@ -54,6 +55,9 @@ The elements of matrix can be ints, floats, or a mixture of both.
 	>>> mat4 = [[1, 2, 3]]
 	>>> matrix_divided(mat4, 11)
 	[[0.09, 0.18, 0.27]]
+
+	>>> matrix_divided([[1, 2], [1, 2]], math.inf)
+	[[0.0, 0.0], [0.0, 0.0]]
 
 The original matrix remains unchanged
 
@@ -155,6 +159,20 @@ The elements that makes up the rows of "matrix" aren't all ints or floats
 	Traceback (most recent call last):
 		...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+One or both paremeters are missing
+
+::
+
+	>>> matrix_divided([[1, 2]])
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	>>> matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 a ZeroDivisionError is raised if "div" is equal to 0.
 
