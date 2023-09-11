@@ -1,0 +1,153 @@
+# 1-my_list.txt
+
+=======================
+How to use 1-my_list.py
+=======================
+
+This module contains a class called "MyList()"
+which inherits of the "list" object.
+
+It has one method called "print_sorted()" which
+prints the list sorted in ascending order.
+
+Numbers
+=======
+
+Integers
+
+::
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+Floats
+
+::
+
+	>>> lst = MyList()
+        >>> lst.append(1.7)
+        >>> lst.append(0.4)
+        >>> lst.append(22.98)
+        >>> lst.append(3.14)
+        >>> lst.append(50.09)
+        >>> print(lst)
+        [1.7, 0.4, 22.98, 3.14, 50.09]
+
+        >>> lst.print_sorted()
+        [0.4, 1.7, 3.14, 22.98, 50.09]
+
+        >>> print(lst)
+        [1.7, 0.4, 22.98, 3.14, 50.09]
+
+Negative Numbers
+================
+
+::
+
+        >>> lst2 = MyList()
+        >>> lst2.append(-1.7)
+        >>> lst2.append(-0.4)
+        >>> lst2.append(-22.98)
+        >>> lst2.append(-3.14)
+        >>> lst2.append(-50.09)
+        >>> print(lst2)
+        [-1.7, -0.4, -22.98, -3.14, -50.09]
+
+        >>> lst2.print_sorted()
+        [-50.09, -22.98, -3.14, -1.7, -0.4]
+
+        >>> print(lst2)
+        [-1.7, -0.4, -22.98, -3.14, -50.09]
+
+Non-numbers
+===========
+
+::
+
+        >>> lst3 = MyList()
+        >>> lst3.append("a")
+        >>> lst3.append("z")
+        >>> lst3.append("n")
+        >>> lst3.append("x")
+        >>> lst3.append("l")
+        >>> print(lst3)
+        ['a', 'z', 'n', 'x', 'l']
+
+        >>> lst3.print_sorted()
+        ['a', 'l', 'n', 'x', 'z']
+
+        >>> print(lst3)
+        ['a', 'z', 'n', 'x', 'l']
+
+Empty list
+==========
+
+::
+
+	>>> lst4 = MyList()
+	>>> print(lst4)
+	[]
+
+	>>> lst4.print_sorted()
+	[]
+
+	>>> import math
+	>>> lst5 = MyList()
+	>>> lst5.append(math.inf)
+	>>> lst5.append(11)
+	>>> lst5.append(0)
+	>>> lst5.append(0)
+	>>> lst5.append(0)
+	>>> lst5.append(13.7)
+	>>> lst5.append(-4)
+	>>> print(lst5)
+	[inf, 11, 0, 0, 0, 13.7, -4]
+
+	>>> lst5.print_sorted()
+	[-4, 0, 0, 0, 11, 13.7, inf]
+
+Exceptions
+==========
+
+::
+
+	>>> lst6 = MyList()
+	>>> lst6.append("Hello")
+	>>> lst6.append(12)
+	>>> lst6.append(math.inf)
+	>>> lst6.append((1+5j))
+	>>> lst6.append("c")
+	>>> print(lst6)
+	['Hello', 12, inf, (1+5j), 'c']
+
+	>>> lst6.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'int' and 'str'
+
+	>>> lst7 = MyList()
+	>>> lst7.append([1, 2, 3])
+	>>> lst7.append("Word")
+	>>> lst7.append((1, 2, 3))
+	>>> lst7.append(102.34)
+	>>> print(lst7)
+	[[1, 2, 3], 'Word', (1, 2, 3), 102.34]
+
+	>>> lst7.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'str' and 'list'
+
