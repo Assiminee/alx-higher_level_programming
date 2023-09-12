@@ -66,3 +66,18 @@ Numbers
 	Traceback (most recent call last):
 		...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> bg.integer_validator("empty list", [])
+	Traceback (most recent call last):
+                ...
+        TypeError: empty list must be an integer
+
+	>>> bg.integer_validator("empty tuple", ())
+        Traceback (most recent call last):
+                ...
+        TypeError: empty tuple must be an integer
+
+	>>> bg.integer_validator("empty dict", {})
+        Traceback (most recent call last):
+                ...
+        TypeError: empty dict must be an integer
