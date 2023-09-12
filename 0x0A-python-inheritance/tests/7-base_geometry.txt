@@ -84,6 +84,6 @@ Numbers
 
 	>>> bg.integer_validator(1, 1)
 
-	>>> valid = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
-	>>> len(valid) > 1
+	>>> doc_len = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	>>> len(doc_len) > 1
 	True
