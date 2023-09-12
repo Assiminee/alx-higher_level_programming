@@ -81,3 +81,5 @@ Numbers
         Traceback (most recent call last):
                 ...
         TypeError: empty dict must be an integer
+
+	>>> bg.integer_validator(1, 1)
