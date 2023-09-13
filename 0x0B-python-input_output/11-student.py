@@ -18,8 +18,6 @@ class Student:
         representation of a Student
         instance
         """
-        if isinstance(attrs, list) and not len(attrs):
-            return {}
         if attrs:
             inst_dict = {}
             for att in attrs:
@@ -27,3 +25,4 @@ class Student:
                     inst_dict[att] = self.__dict__[att]
             return inst_dict
         return self.__dict__
+                
