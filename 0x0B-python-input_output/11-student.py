@@ -29,4 +29,5 @@ class Student:
     def reload_from_json(self, json):
         """ replaces all attributes of the Student instance
         """
-        self.__dict__ = json
+        valid = {key: value for key, value in json.items() if key in self.__dict__.keys()}
+        self.__dict__ = valid
