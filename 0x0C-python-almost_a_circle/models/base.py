@@ -2,6 +2,7 @@
 """base module"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -67,3 +68,30 @@ class Base:
         with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
             dict_list = cls.from_json_string(f.read())
         return [cls.create(**entry) for entry in dict_list]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes data to a csv file"""
+        with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as csv_f:
+            if list_objs:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    fieldnames = ["id", "size", "x", "y"]
+
+                csv_writer = csv.DictWriter(csv_f, fieldnames, delimiter=",")
+                csv_writer.writeheader()
+                for obj in list_objs:
+                    csv_writer.writerow(obj.to_dictionary())
+            else:
+                csv_writer = csv.writer(csv_f)
+                csv_writer.writerow([])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads data from csv file"""
+        with open(f"{cls.__name__}.csv", encoding="utf-8") as csv_f:
+            csv_reader = csv.DictReader(csv_f)
+            dictionaries = [{key: int(value) for key, value in row.items()}
+                            for row in csv_reader]
+            return [cls.create(**row) for row in dictionaries]
