@@ -122,6 +122,8 @@ class Rectangle(Base):
             i = 0
             atts = ["id", "width", "height", "x", "y"]
             for att in atts:
+                if i == len(args):
+                    break
                 setattr(self, att, args[i])
                 i += 1
         else:
