@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base module"""
 import json
+import os
 
 
 class Base:
@@ -60,6 +61,9 @@ class Base:
         creates class instances out of those dicts,
         returns the created instances
         """
+        if not os.path.exists(f"{cls.__name__}.json"):
+            return []
+
         with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
             dict_list = cls.from_json_string(f.read())
         return [cls.create(**entry) for entry in dict_list]
