@@ -1,0 +1,45 @@
+# display.txt
+
+This file is meant to test the "display()" method of the Rectangle class
+
+	>>> from random import randint
+	>>> from models.rectangle import Rectangle
+	>>> r1 = Rectangle(3, 7)
+	>>> r1.display()
+	###
+	###
+	###
+	###
+	###
+	###
+	###
+
+	>>> r1.width = r1.height = 1
+	>>> r1.display()
+	#
+
+	>>> r1.width = r1.height = 5
+	>>> r1.display()
+	#####
+	#####
+	#####
+	#####
+	#####
+
+	>>> r1.x, r1.y = 3, 2
+	>>> r1.display()
+	<BLANKLINE>
+	<BLANKLINE>
+	   #####
+	   #####
+	   #####
+	   #####
+	   #####
+
+	>>> r1.y = 0
+	>>> r1.display()
+	   #####
+	   #####
+	   #####
+	   #####
+	   #####
