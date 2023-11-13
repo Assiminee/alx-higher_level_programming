@@ -4,7 +4,7 @@ const parsed = parseInt(arg);
 if (!isNaN(parsed)) {
   if (parsed > 0) {
     for (let i = 0; i < parsed; i++) {
-      console.log('x'.repeat(parsed));
+      console.log('X'.repeat(parsed));
     }
   }
 } else {
