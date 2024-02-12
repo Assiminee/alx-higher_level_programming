@@ -1,6 +1,4 @@
 #!/usr/bin/node
-const add = require('./13-add').add;
-console.log(add(3, 5));
 const args = process.argv;
 if (args.length < 3) {
   console.log('No argument');
