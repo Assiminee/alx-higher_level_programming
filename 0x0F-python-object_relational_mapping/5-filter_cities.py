@@ -15,7 +15,7 @@ if __name__ == "__main__":
     )
 
     query = "SELECT c.name FROM cities c INNER JOIN states s\
-             ON c.state_id = s.id WHERE s.name LIKE %s ORDER BY c.id ASC;"
+             ON c.state_id = s.id WHERE s.name LIKE BINARY %s ORDER BY c.id ASC;"
 
     cursor = con.cursor()
     cursor.execute(query, safeInput)
