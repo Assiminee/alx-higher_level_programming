@@ -22,10 +22,7 @@ if __name__ == "__main__":
         .filter(State.name.like("%a%"))\
         .order_by(asc(State.id)).all()
 
-    if states:
-        for state in states:
-            print(*state, sep=": ")
-    else:
-        print("Nothing")
+    for state in states:
+        print(*state, sep=": ")
 
     session.close()
