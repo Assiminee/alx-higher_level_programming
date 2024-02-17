@@ -7,9 +7,7 @@ if __name__ == "__main__":
 
     host = "localhost"
     port = 3306
-    user = sys.argv[1]  # user trying to connect to the database
-    pwd = sys.argv[2]   # user password
-    db = sys.argv[3]    # database name
+    user, pwd, db = sys.argv[1:4]
 
     con = MySQLdb.connect(
             host=host, port=port, user=user, passwd=pwd, db=db
