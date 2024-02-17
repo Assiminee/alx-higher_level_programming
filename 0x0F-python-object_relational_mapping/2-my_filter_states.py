@@ -15,7 +15,7 @@ if __name__ == "__main__":
     )
 
     query = f"SELECT * FROM states\
-            WHERE name LIKE BINARY '{searchTerm}'\
+            WHERE name LIKE '{searchTerm}'\
             ORDER BY id ASC;"
     cursor = con.cursor()
     cursor.execute(query)
