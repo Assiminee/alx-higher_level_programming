@@ -21,12 +21,11 @@ if __name__ == "__main__":
     cursor = con.cursor()
     cursor.execute(query, safeInput)
     rows = cursor.fetchall()
+    data = ()
 
     for row in rows:
-        delim = ", " if row is not rows[len(rows) - 1] else "\n"
-        for col in row:
-            print(col, end="")
-        print(end=delim)
+        data += row
+    print(*data, sep=", ")
 
     cursor.close()
     con.close()
