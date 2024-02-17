@@ -14,8 +14,9 @@ if __name__ == "__main__":
             host=host, port=port, user=user, passwd=pwd, db=db
     )
 
-    query = "SELECT c.name FROM cities c INNER JOIN states s\
-             ON c.state_id = s.id WHERE s.name LIKE BINARY %s ORDER BY c.id ASC;"
+    query = "SELECT name FROM cities WHERE state_id = \
+             (SELECT id FROM states WHERE name LIKE BINARY %s)\
+             ORDER BY cities.id ASC;"
 
     cursor = con.cursor()
     cursor.execute(query, safeInput)
