@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Fetching data from database where name matches user input
+Avoiding sql injections
 """
 if __name__ == "__main__":
     import MySQLdb
