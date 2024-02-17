@@ -18,9 +18,13 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states = session.query(State.id, State.name).filter(State.id == 1).first()
+    states = session.query(State.id, State.name)\
+        .filter(State.name.like("%a%"))\
+        .order_by(asc(State.id)).all()
+
     if states:
-        print(*states, sep=": ")
+        for state in states:
+            print(*state, sep=": ")
     else:
         print("Nothing")
 
