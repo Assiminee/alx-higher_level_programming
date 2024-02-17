@@ -14,9 +14,10 @@ if __name__ == "__main__":
             host=host, port=port, user=user, passwd=pwd, db=db
     )
 
-    query = f"SELECT * FROM states\
-            WHERE name LIKE '%{searchTerm}%'\
-            ORDER BY id ASC;"
+    query = "SELECT * FROM states\
+            WHERE name LIKE BINARY '{}'\
+            ORDER BY id ASC;".format(searchTerm)
+
     cursor = con.cursor()
     cursor.execute(query)
     rows = cursor.fetchall()
