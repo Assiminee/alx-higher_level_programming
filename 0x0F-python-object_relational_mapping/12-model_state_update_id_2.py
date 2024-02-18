@@ -2,7 +2,7 @@
 """Fetches data from states table
 """
 from model_state import Base, State
-from sqlalchemy import create_engine, select, insert
+from sqlalchemy import create_engine, update
 import sys
 
 if __name__ == "__main__":
@@ -15,12 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     with engine.connect() as conn:
-        query = insert(State).values(name='Louisiana')
+        query = update(State).where(State.id == 2).values(name='New Mexico')
         conn.execute(query)
-        conn.commit()  # Must commit after an insert
-
-        query = select(State.id).where(State.name == 'Louisiana')
-        state_id = conn.execute(query).first()[0]
-        print(state_id)
+        conn.commit()  # Must commit after an update statement
 
     engine.dispose()
