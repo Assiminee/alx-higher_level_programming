@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Function that searches for the peak element in
-a list of integers 
+a list of integers
 """
 
 
