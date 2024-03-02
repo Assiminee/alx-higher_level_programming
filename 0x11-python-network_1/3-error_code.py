@@ -6,8 +6,8 @@
 """
 
 
-import urllib.request
 import urllib.error
+import urllib.request
 import sys
 
 if __name__ == '__main__':
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     try:
         with urllib.request.urlopen(url) as resp:
             server_resp = resp.read()
-            resp_body = got.decode('utf-8')
+            resp_body = server_resp.decode('utf-8')
 
         print(resp_body)
     except urllib.error.HTTPError as er:
