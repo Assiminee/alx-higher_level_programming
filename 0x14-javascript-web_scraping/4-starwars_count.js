@@ -6,20 +6,14 @@ const movieCountCharacter = (url) => {
   const req = require('request');
 
   req(url, (err, resp, body) => {
-    if (err) {
-      error(err);
-      return;
-    }
+    if (err) { error(err); return; }
 
     const movieArr = JSON.parse(body).results;
-    const character = 'https://swapi-api.alx-tools.com/api/people/18/';
     let count = 0;
 
     for (const movie of movieArr) {
-      const characters = movie.characters;
-
-      if (characters.includes(character)) {
-        count++;
+      for (const character of movie.characters) {
+        count = character.includes(18) ? count + 1 : count;
       }
     }
 
@@ -33,10 +27,5 @@ if (process.argv.length < 3) {
 }
 
 const url = process.argv[2];
-
-if (url !== 'https://swapi-api.alx-tools.com/api/films') {
-  log('Incorrect url');
-  process.exit(1);
-}
 
 movieCountCharacter(url);
