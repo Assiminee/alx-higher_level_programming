@@ -12,7 +12,7 @@ const readFile = (path) => {
   });
 };
 
-if (process.argc < 3) {
+if (process.argv.length < 3) {
   console.log('Usage: ./0-readme /path/to/file');
   process.exit(1);
 }
