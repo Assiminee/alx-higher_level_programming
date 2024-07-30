@@ -6,7 +6,7 @@ const displayStatusCode = (url) => {
   const req = require('request');
 
   req.get(url).on('response', (resp) => {
-	  log(`code: ${resp.statusCode}`);
+    log(`code: ${resp.statusCode}`);
   });
 };
 
