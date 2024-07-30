@@ -15,17 +15,17 @@ const movieCountCharacter = (url) => {
     const character = 'https://swapi-api.alx-tools.com/api/people/18/';
     let count = 0;
 
-    for (movie of movieArr) {
+    for (const movie of movieArr) {
       const characters = movie.characters;
-      
+
       if (characters.includes(character)) {
         count++;
-	  }
+      }
     }
 
     log(count);
   });
-}
+};
 
 if (process.argv.length < 3) {
   log('Usage: ./4-starwars_count url');
