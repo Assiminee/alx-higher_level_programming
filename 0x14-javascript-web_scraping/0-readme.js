@@ -1,12 +1,6 @@
 #!/usr/bin/node
 
-const readFile = () => {
-  if (process.argc < 3) {
-    console.log('Usage: ./0-readme /path/to/file');
-    return;
-  }
-
-  const [path] = process.argv.slice(2);
+const readFile = (path) => {
   const fs = require('node:fs');
 
   fs.readFile(path, 'utf8', (err, data) => {
@@ -18,4 +12,11 @@ const readFile = () => {
   });
 };
 
-readFile();
+if (process.argc < 3) {
+  console.log('Usage: ./0-readme /path/to/file');
+  process.exit(1);
+}
+
+const [path] = process.argv.slice(2);
+
+readFile(path);
