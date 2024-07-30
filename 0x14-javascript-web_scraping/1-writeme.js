@@ -7,8 +7,9 @@ const writeIntoFile = (path, data) => {
   const { error } = require('node:console');
 
   fs.writeFile(path, data, 'utf8', err => {
-    if (err)
+    if (err) {
       error(err);
+    }
   });
 };
 
