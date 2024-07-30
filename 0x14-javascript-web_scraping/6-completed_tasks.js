@@ -10,7 +10,7 @@ const displayCompleted = (url) => {
     const json = JSON.parse(body);
 
     for (const entry of json) {
-      const userId = `${entry.userId}`;
+      const userId = entry.userId;
 
       if (!entry.completed) {
         continue;
